@@ -2,8 +2,6 @@
 A simple calendar application that allows a user to save events for each hour of the day
 
 
-******* NEED SCREENSHOT AND LINK TO DEPLOYED APP *********
-
 ## User Story
 
 AS AN employee with a busy schedule
@@ -31,3 +29,6 @@ The following animation demonstrates the application functionality:
 
 ![A user clicks on slots on the color-coded calendar and edits the events.](./images/05-third-party-apis-homework-demo.gif)
 
+*** LINK TO DEPLOYED APP *** - https://amilou86.github.io/Work-Day-Scheduler/
+
+![Image description](images/WDS-screenshot.png)
