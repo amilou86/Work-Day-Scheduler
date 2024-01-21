@@ -5,4 +5,6 @@ window.onload = function () {
     var today = dayjs();
     todayEl.text(today.format("[Today is ] D MMM YYYY"));
 
+containerEl
+    
 };
