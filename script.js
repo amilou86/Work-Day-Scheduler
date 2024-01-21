@@ -30,6 +30,28 @@ window.onload = function () {
 
     });
 
+    // Get all save buttons
+    var saveBtns = document.querySelectorAll('.saveBtn');
+
+    // Add a click event listener to each save button
+    saveBtns.forEach(saveButton => {
+        saveButton.addEventListener('click', function () {
+            // Get the textarea within the same time-block element
+            var descriptionTextarea = this.parentElement.querySelector('.description');
+
+            // Get the user input from the textarea
+            var descriptionText = descriptionTextarea.value;
+
+            // Get the ID of the time-block element to use as the key in local storage
+            var timeBlockId = this.parentElement.id;
+
+            // Save the input to local storage
+            localStorage.setItem(timeBlockId, descriptionText);
+
+            //alert to confirm input has been saved
+            alert("Description saved successfully!");
+        });
+    });
 
 
 
