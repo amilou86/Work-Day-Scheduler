@@ -1,7 +1,7 @@
 window.onload = function () {
+    // Display current date
     var todayEl = $('#currentDay');
     var containerEl = $('#containerBox');
-
     var today = dayjs();
     todayEl.text(today.format("[Today is ] D MMM YYYY"));
 
@@ -27,32 +27,34 @@ window.onload = function () {
             timeBlock.classList.add('future');
         }
 
+        // get saved description from local storage based on timeBlock ID
+        var timeBlockId = timeBlock.id;
+        var savedDescription = localStorage.getItem(timeBlockId);
 
+        // If saved description exists, pre-populate the textarea
+        if (savedDescription) {
+            timeBlock.querySelector('.description').value = savedDescription;
+        }
     });
 
     // Get all save buttons
     var saveBtns = document.querySelectorAll('.saveBtn');
-
-    // Add a click event listener to each save button
+    // add eventlisteners to save buttons
     saveBtns.forEach(saveButton => {
         saveButton.addEventListener('click', function () {
-            // Get the textarea within the same time-block element
+            // Get textarea element 
             var descriptionTextarea = this.parentElement.querySelector('.description');
-
-            // Get the user input from the textarea
+            // get user input text
             var descriptionText = descriptionTextarea.value;
 
-            // Get the ID of the time-block element to use as the key in local storage
+            // Get timeBlock ID as key for local storage
             var timeBlockId = this.parentElement.id;
 
-            // Save the input to local storage
+            // Save user input to local storage with the timeBlock ID as key
             localStorage.setItem(timeBlockId, descriptionText);
 
-            //alert to confirm input has been saved
+            // alert to confirm saved
             alert("Description saved successfully!");
         });
     });
-
-
-
 };
